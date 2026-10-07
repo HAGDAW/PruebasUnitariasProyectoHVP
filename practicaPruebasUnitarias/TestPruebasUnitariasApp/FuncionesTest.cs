@@ -1,8 +1,6 @@
-﻿using ActividadTDDApp;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using practicaPruebasUnitarias;
+﻿using practicaPruebasUnitarias;
 
-namespace TestActividadTDDApp
+namespace TestPruebasUnitariasApp
 {
     [TestClass]
     public class FuncionesTest
@@ -56,6 +54,24 @@ namespace TestActividadTDDApp
             bool resultado = Funciones.EsContrasenyaValida(contrasenya);
 
             Assert.IsTrue(resultado, "Una contraseña correcta (>=8 caracteres y con '#') debería ser válida.");
+        }
+
+        [TestMethod]
+        public void TestFactorialNegativo()
+        {
+            Assert.AreEqual(-1, Funciones.CalcularFactorial(-2));
+        }
+
+        [TestMethod]
+        public void TestFactorialCero()
+        {
+            Assert.AreEqual(1, Funciones.CalcularFactorial(0));
+        }
+
+        [TestMethod]
+        public void TestFactorialPositivo()
+        {
+            Assert.AreEqual(120, Funciones.CalcularFactorial(5));
         }
     }
 }

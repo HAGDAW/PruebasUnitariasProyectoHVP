@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="ActividadTDDApp.csproj" />
+  <Project Path="ActividadTDDApp.csproj" Id="56272f48-1853-4bc5-b53a-653dda8e3196" />
   <Project Path="TestPruebasUnitariasApp/TestActividadTDDApp.csproj" />
 </Solution>

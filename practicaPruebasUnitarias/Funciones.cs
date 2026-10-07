@@ -18,5 +18,10 @@ namespace practicaPruebasUnitarias
                 throw new ArgumentException(EDAD_NEGATIVE_MESSAGE);
             return edad >= 18;
         }
+
+        public static long CalcularFactorial(int n)
+        {
+            return 0; // Un valor temporal solo para que compile
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿using ActividadTDDApp;
+﻿using practicaPruebasUnitarias;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using practicaPruebasUnitarias;
 

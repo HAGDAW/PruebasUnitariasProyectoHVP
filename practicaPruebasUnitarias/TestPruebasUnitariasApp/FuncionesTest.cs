@@ -1,11 +1,61 @@
-﻿namespace TestPruebasUnitariasApp
+﻿using ActividadTDDApp;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using practicaPruebasUnitarias;
+
+namespace TestActividadTDDApp
 {
     [TestClass]
-    public sealed class FuncionesTest
+    public class FuncionesTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void EsContrasenyaValida_SiEsNull_DevuelveFalse()
         {
+            string contrasenya = null;
+
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+
+            Assert.IsFalse(resultado, "Una contraseña null debería ser inválida.");
+        }
+
+        [TestMethod]
+        public void EsContrasenyaValida_SiEstaVacia_DevuelveFalse()
+        {
+            string contrasenya = "";
+
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+
+            Assert.IsFalse(resultado, "Una contraseña vacía debería ser inválida.");
+        }
+
+        [TestMethod]
+        public void EsContrasenyaValida_SiTieneMenosDe8Caracteres_DevuelveFalse()
+        {
+
+            string contrasenya = "12345#";
+
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+
+            Assert.IsFalse(resultado, "Una contraseña con menos de 8 caracteres debería ser inválida.");
+        }
+
+        [TestMethod]
+        public void EsContrasenyaValida_SiNoTieneAlmohadilla_DevuelveFalse()
+        {
+            string contrasenya = "12345678";
+
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+
+            Assert.IsFalse(resultado, "Una contraseña que no contiene '#' debería ser inválida.");
+        }
+
+        [TestMethod]
+        public void EsContrasenyaValida_SiCumpleTodasLasReglas_DevuelveTrue()
+        {
+            string contrasenya = "ClaveSegura123#";
+
+            bool resultado = Funciones.EsContrasenyaValida(contrasenya);
+
+            Assert.IsTrue(resultado, "Una contraseña correcta (>=8 caracteres y con '#') debería ser válida.");
         }
     }
 }

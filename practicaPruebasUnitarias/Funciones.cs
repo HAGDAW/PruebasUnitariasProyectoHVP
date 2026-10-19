@@ -23,5 +23,25 @@ namespace practicaPruebasUnitarias
         {
             return 0; // Un valor temporal solo para que compile
         }
+
+        public static bool EsContrasenyaValida(string contrasenya)
+        {
+            if (contrasenya == null)
+            {
+                return false;
+            }
+
+            if (contrasenya.Length < 8)
+            {
+                return false;
+            }
+
+            if (!contrasenya.Contains('#'))
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

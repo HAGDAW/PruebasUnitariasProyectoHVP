@@ -58,6 +58,8 @@ namespace TestPruebasUnitariasApp
             Assert.IsTrue(resultado, "Una contraseña correcta (>=8 caracteres y con '#') debería ser válida.");
         }
 
+
+
         [TestMethod]
         public void TestFactorialNegativo()
         {

@@ -9,7 +9,7 @@ namespace practicaPruebasUnitarias
     public class Funciones
     {
         public const string EDAD_0_MESSAGE = "Evidentemente no eres mayor de edad";
-        public const string EDAD_NEGATIVE_MESSAGE = "Todavía no has nacido";
+        public const string EDAD_NEGATIVE_MESSAGE = "Todavía no has nacido";    
         public static bool EsMayorDeEdad(int edad)
         {
             if (edad == 0)
@@ -21,7 +21,22 @@ namespace practicaPruebasUnitarias
 
         public static long CalcularFactorial(int n)
         {
-            return 0; // Un valor temporal solo para que compile
+            if (n < 0)
+                return -1;
+            if (n == 0)
+                return 1;
+
+            long resultado = 1;
+            for (int i = 1; i <= n; i++)
+            {
+                resultado *= i;
+            }
+            return resultado;
+        }
+        public static bool EsContrasenyaValida(string contrasenya)
+        {
+            // Retorna un valor básico para que compile y los tests puedan ejecutarse (y fallar en RED)
+            return false;
         }
 
         public static bool EsContrasenyaValida(string contrasenya)

@@ -33,5 +33,10 @@ namespace practicaPruebasUnitarias
             }
             return resultado;
         }
+        public static bool EsContrasenyaValida(string contrasenya)
+        {
+            // Retorna un valor básico para que compile y los tests puedan ejecutarse (y fallar en RED)
+            return false;
+        }
     }
 }
